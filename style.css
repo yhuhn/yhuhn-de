@@ -1,0 +1,188 @@
+:root {
+    --p: #efefef;
+    --border-radius: 10px;
+    --ff: "Xmind", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+.container {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    z-index: 1;
+}
+
+.main-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.links-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-item {
+    position: relative;
+    color: rgba(239, 239, 239, 0.7);
+    text-decoration: none;
+    font-family: var(--ff);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(2, 2, 2, 0.2);
+    backdrop-filter: blur(15px) saturate(1.4);
+    -webkit-backdrop-filter: blur(15px) saturate(1.4);
+    border: 1px solid #212121;
+    border-radius: var(--border-radius);
+    padding: 16px 18px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.link-item:hover {
+    color: var(--p);
+    border: 1px solid #888888;
+}
+
+.projects-panel {
+    position: relative;
+    width: 50%;
+    background: rgba(2, 2, 2, 0.2);
+    backdrop-filter: blur(15px) saturate(1.4);
+    -webkit-backdrop-filter: blur(15px) saturate(1.4);
+    border: 1px solid #212121;
+    border-radius: var(--border-radius);
+    padding: 15px;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-item {
+    text-decoration: none;
+    background: #161616;
+    border: 1px solid #212121;
+    border-radius: var(--border-radius);
+    padding: 0.8em 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.project-item:hover {
+    border-color: #888888;
+
+    .project-label {color: var(--p)}
+    .project-desc {color: rgba(239, 239, 239, 0.7)}
+    .project-icons .project-icon {background-color: var(--p)}
+}
+
+.project-label {
+    font-family: var(--ff);
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(239, 239, 239, 0.7);
+}
+
+.project-desc {
+    font-family: var(--ff);
+    font-size: 14px;
+    color: rgba(239, 239, 239, 0.5);
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    text-align: left;
+}
+
+.project-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.project-icons .project-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    mask-image: var(--icon-url);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: var(--icon-url);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    background-color: rgba(239, 239, 239, 0.7);
+}
+
+@font-face {
+    font-family: "Icons";
+    src: url("icons.woff2") format("woff2");
+}
+
+.icon {
+    font-family: "Icons";
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 0;
+    font-family: var(--ff);
+    font-size: 18px;
+    color: rgba(239, 239, 239, 0.7);
+    width: auto;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #161616;
+    border: 1px solid #212121;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+.footer-note .icon {
+    color: var(--p);
+}
