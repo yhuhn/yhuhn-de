@@ -186,3 +186,34 @@ html, body {
 .footer-note .icon {
     color: var(--p);
 }
+
+@media (max-width: 1000px) {
+
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 0 70px;
+        overflow: visible;
+    }
+
+    .main-row {
+        flex-direction: column;
+    }
+
+    .links-container, .projects-panel {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
